@@ -2,6 +2,7 @@ import os
 import time
 from flask import Flask, jsonify, json, redirect
 app = Flask(__name__)
+application = app # wsgi-compliant
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, 'data.json')
