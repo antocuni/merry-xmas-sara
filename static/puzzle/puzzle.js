@@ -272,7 +272,7 @@ Puzzle.prototype.move = function(k) {
     this.pos[this.missing] = this.pos[k];
     this.pos[k] = tmp;
     this.place_tile(k, tmp, true);
-    if (is_identity(this.pos)) {
+    if (true || is_identity(this.pos)) {
         this.disarm();
     } else {
         this.arm();
@@ -360,10 +360,10 @@ Puzzle.prototype.do_fade = function() {
         obj = this;
         game_index += 1;
         localStorage.game_index = game_index + '';
-        dialog('congratulations',
-               '<p>Very good, you win!<br>Play another game?',
-               ['no', 'yes'],
-               function(x) { obj.callback(x == 'yes'); });
+        dialog('Hai vinto!',
+               '<p>Bravissima, hai vinto!<br>Ti sei guadagnata la combinazione per il lucchetto fucsia: 143 (che, per inciso, è il numero di giorni che sono passati da quando ci siamo conosciuti, l\'8 Aprile).<br>Vuoi giocare ancora?',
+               ['Si', 'No'],
+               function(x) { obj.callback(x == 'Si'); });
     }
 };
 
@@ -379,7 +379,7 @@ Puzzle.prototype.fade = function() {
 var game_index;
 
 function set_screen(name) {
-    if (! name) name = '#title';
+    if (! name) name = '#play';
     // new screen
     screens = document.getElementsByTagName('div');
     for (var i = 0; i < screens.length; ++i) {
@@ -397,17 +397,10 @@ function set_screen(name) {
         var change = (function() {
             var list = [
                 'anto-sara-olaf.jpg',
-                'img002.jpg',
-                'img016.jpg',
-                'img003.jpg',
-                'img019.jpg',
-                'img060.jpg',
-                'img007.jpg'
             ];
             var puzzle = document.getElementById('puzzle');
             return function() {
-                var mn = (game_index < list.length ?
-                            12 : Math.floor(Math.random() * 14) + 4);
+                var mn = 12; /* (game_index < list.length ? 12 : Math.floor(Math.random() * 14) + 4); */
                 var next = list[game_index % list.length];
                 function start() {
                     var level = game_index;
@@ -418,7 +411,7 @@ function set_screen(name) {
                                    if (x) {
                                        change();
                                    } else {
-                                       window.location.hash = '#credits';
+                                       window.location = '/';
                                    }
                                    // level ends
                                });
