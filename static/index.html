@@ -96,7 +96,7 @@
                   lucchetti e potrai avere degli indizi per scoprirle
                   prima.</p>
 
-                <a class="btn btn-default" href="#">Start</a>
+                <a id="startbutton" class="btn btn-danger">Start</a>
                 <hr>
             </div><!--ITEM END-->
             <div class="col-md-4"></div>
@@ -159,10 +159,10 @@
     <script>new WOW().init();</script>
 
     <script>
-        function update_status() {
-            function do_clock(id, data) {
-                var status = data[0];
-                var delay = data[1];
+        function on_status(data) {
+            function do_clock(id, clock_data) {
+                var status = clock_data[0];
+                var delay = clock_data[1];
                 var clock = $(id).FlipClock(delay, {
                     clockFace: 'HourlyCounter',
                     countdown: true,
@@ -171,14 +171,20 @@
                 });
                 if (status == "started") {
                     clock.start();
+                    $('#startbutton').addClass('disabled');
                 }
             }
+            do_clock('#clock-pink', data.pink);
+            do_clock('#clock-blue', data.blue);
+            do_clock('#clock-magenta', data.magenta);
+        }
 
-            $.getJSON("/status", function(data) {
-                do_clock('#clock-pink', data.pink);
-                do_clock('#clock-blue', data.blue);
-                do_clock('#clock-magenta', data.magenta);
-            });
+        $('#startbutton').on('click', function(e) {
+            $.getJSON("/start", on_status);
+        });
+
+        function update_status() {
+            $.getJSON("/status", on_status);
         }
 
         $(document).ready(function() {
