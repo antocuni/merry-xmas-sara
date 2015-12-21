@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/flipclock.css">
     
     <!-- ===========================
     FONTS
@@ -103,15 +104,14 @@
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-pink.png" alt="">
                 <h4>Lucchetto rosa</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                <div class="clock" id="clock-pink"></div>
                 <hr>
-              
             </div><!--ITEM END-->
 
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-blue.png" alt="">
                 <h4>Lucchetto azzurro</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                <div class="clock" id="clock-blue"></div>
                 <hr>
 
             </div><!--ITEM END-->
@@ -119,7 +119,7 @@
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-magenta.png" alt="">
                 <h4>Lucchetto fucsia</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                <div class="clock" id="clock-magenta"></div>
                 <hr>
             </div><!--ITEM END-->
 
@@ -153,6 +153,32 @@
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/snowstorm-min.js"></script>
-    <script>new WOW().init();</script>    
+	<script src="js/flipclock.min.js"></script>
+    <script>new WOW().init();</script>
+
+    <script>
+        $(document).ready(function() {
+
+          var clock_pink = $('#clock-pink').FlipClock(20, {
+            clockFace: 'HourlyCounter',
+            countdown: true,
+            language: 'it'
+          });
+
+          var clock_blue = $('#clock-blue').FlipClock(20, {
+            clockFace: 'HourlyCounter',
+            countdown: true,
+            language: 'it'
+          });
+
+          var clock_magenta = $('#clock-magenta').FlipClock(20, {
+            clockFace: 'HourlyCounter',
+            countdown: true,
+            language: 'it'
+          });
+
+        });
+    </script>
+
 </body>
 </html>
