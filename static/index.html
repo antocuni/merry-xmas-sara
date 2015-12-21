@@ -96,7 +96,7 @@
                   lucchetti e potrai avere degli indizi per scoprirle
                   prima.</p>
 
-                <a id="startbutton" class="btn btn-danger">Start</a>
+                <a id="startbutton" class="btn btn-danger disabled">Start</a>
                 <hr>
             </div><!--ITEM END-->
             <div class="col-md-4"></div>
@@ -185,9 +185,12 @@
                 });
                 if (status == "started") {
                     clock.start();
-                    $('#startbutton').addClass('disabled');
                     setTimeout(update_status, (delay+1)*1000);
                 }
+                else {
+                    $('#startbutton').removeClass('disabled');
+                }
+
             }
             do_clock('pink', data.pink);
             do_clock('blue', data.blue);
@@ -195,6 +198,7 @@
         }
 
         $('#startbutton').on('click', function(e) {
+            $('#startbutton').addClass('disabled');
             $.getJSON("/start", on_status);
         });
 
