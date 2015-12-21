@@ -1,0 +1,138 @@
+
+BODY {
+    background: black;
+    color: white;
+    font-size: 12pt;
+}
+
+P.entry {
+    text-align: center;
+    font-size: 120%;
+    background: #FFFFD0;
+}
+A {
+    color: #800000;
+    background: #FFFFE0;
+    font: inherit;
+    text-decoration: inherit;
+}
+
+DIV.infobox {
+    margin-left: 2em;
+    width: 17em;
+    padding: 1.5em;
+    background: #FFFFC0;
+    color: black;
+    font-size: 120%;
+}
+
+DIV#title {
+    border-left: 2mm solid red;
+    border-top: 2mm solid green;
+}
+#title H1 {
+    text-align: center;
+    font-size: 120%;
+}
+
+DIV#credits {
+    border-right: 2mm solid red;
+    border-bottom: 2mm solid green;
+}
+
+DIV#copying {
+    border-right: 2mm solid red;
+    border-top: 2mm solid blue;
+}
+
+IMG#puzzle {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+IMG.tile {
+    position: absolute;
+    margin: 0px;
+    border: none;
+    padding: 0px;
+}
+
+DIV.canvas {
+    position: absolute;
+    margin: 0px;
+    border: none;
+    padding: 0px;
+    overflow: hidden;
+
+    background: #600000;
+}
+
+DIV.dialog {
+   position: fixed;
+   top: 25%;
+   left: 25%;
+   width: 13em;
+   border: 2px solid #FFB0B0;
+   padding: 0px;
+   color: black;
+   background: white;
+   -webkit-border-radius: 2mm;
+   -moz-border-radius: 2mm;
+}
+.dialog H1 {
+    text-align: center;
+    margin-top: 0pt;
+    font-size: 100%;
+}
+.dialog P {
+    margin: 4mm;
+}
+.dialog P.buttons {
+    text-align: right;
+}
+.dialog .buttons button {
+    margin-left: 1em;
+}
+DIV.titlebar {
+    width: 100%;
+    color: black;
+    background: #FFB0B0;
+    cursor: move;
+}
+
+IMG {
+    border-left: 2mm solid green;
+    border-bottom: 2mm solid green;
+    border-right: 2mm solid red;
+    border-top: 2mm solid red;
+    padding: 1mm;
+}
+
+P.links {
+    margin: 0px;
+    padding: 0px 1em;
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    background: rgba(0,0,0,0.2);
+    color: #808080;
+    font-size: 80%;
+    font-family: Arial, sans-serif, symbol;
+}
+.links A {
+    color: inherit;
+    background: transparent;
+}
+
+SPAN.bf {
+    font-weight: bold;
+}
+
+@media all and (max-width: 600px) {
+    DIV.infobox {
+	margin: 0;
+    }
+    P.links {
+	position: static;
+    }
+}

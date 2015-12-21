@@ -1,0 +1,50 @@
+webpuzzle - Jochen's Sliding Picture Puzzle
+
+
+INTRODUCTION
+============
+
+   Webpuzzle is a puzzle game which you can play in your web browser.
+It is implemented as an HTML5 App and requires a modern browser with
+good HTML5 support to play.
+
+   This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+   Please email any suggestions and bug reports to Jochen Voss
+<voss@seehuhn.de>.  The webpuzzle homepage can be found at
+
+    http://seehuhn.de/pages/webpuzzle
+
+An example installation of webpuzzle, which you are welcome to play
+with, is located at
+
+    http://seehuhn.de/media/webpuzzle/
+
+
+INSTALLATION
+============
+
+   You can run the program directly from the unpacked source
+directory, by pointing your web browser to the file "index.html".
+On a Linux system, most likely the command
+
+    firefox index.html
+
+will work.
+
+   To install webpuzzle on your own web server, make all the files
+listed in "puzzle.manifest" available in a web-accessible directory.
+Also add the file "puzzle.manifest" itself.  This file will need to be
+served by the web server using the content type "text/cache-manifest".
+If you are using Apache, adding the following line to the server
+configuration should make this work:
+
+    AddType text/cache-manifest .manifest
