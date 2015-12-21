@@ -106,13 +106,16 @@
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-pink.png" alt="">
                 <h4>Lucchetto rosa</h4>
+                <h1><span id="secret-pink" class="label label-success"></span></h1>
                 <div class="clock" id="clock-pink"></div>
+
                 <hr>
             </div><!--ITEM END-->
 
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-blue.png" alt="">
                 <h4>Lucchetto azzurro</h4>
+                <h1><span id="secret-blue" class="label label-success"></span></h1>
                 <div class="clock" id="clock-blue"></div>
                 <hr>
 
@@ -121,6 +124,7 @@
             <div class="col-md-4 col-lg-4">
                 <img src="img/padlock-magenta.png" alt="">
                 <h4>Lucchetto fucsia</h4>
+                <h1><span id="secret-magenta" class="label label-success"></span></h1>
                 <div class="clock" id="clock-magenta"></div>
                 <hr>
             </div><!--ITEM END-->
@@ -160,10 +164,20 @@
 
     <script>
         function on_status(data) {
-            function do_clock(id, clock_data) {
+            function do_clock(color, clock_data) {
+                var idclock = "#clock-" + color;
+                var idsecret = "#secret-" + color;
+
                 var status = clock_data[0];
+                if (status == "secret") {
+                    var secret = clock_data[1];
+                    $(idclock).fadeOut();
+                    $(idsecret).text(secret).delay(400).fadeIn();
+                    return;
+                }
                 var delay = clock_data[1];
-                var clock = $(id).FlipClock(delay, {
+                $(idsecret).hide();
+                var clock = $(idclock).show().FlipClock(delay, {
                     clockFace: 'HourlyCounter',
                     countdown: true,
                     language: 'it',
@@ -172,11 +186,12 @@
                 if (status == "started") {
                     clock.start();
                     $('#startbutton').addClass('disabled');
+                    setTimeout(update_status, (delay+1)*1000);
                 }
             }
-            do_clock('#clock-pink', data.pink);
-            do_clock('#clock-blue', data.blue);
-            do_clock('#clock-magenta', data.magenta);
+            do_clock('pink', data.pink);
+            do_clock('blue', data.blue);
+            do_clock('magenta', data.magenta);
         }
 
         $('#startbutton').on('click', function(e) {
