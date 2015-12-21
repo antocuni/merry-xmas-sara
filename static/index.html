@@ -61,7 +61,7 @@
                     <div class="herotext">
                         <h2 class="wow zoomInDown" data-wow-duration="3s">Ciao Sara, benvenuta <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 </h2>
-                        <h1 class="wow flipInY">Buon Natale!</h1>
+                        <h1 class="wow flipInY" data-wow-delay="1s">Buon Natale!</h1>
                         <img style="margin-top: 30px" class="bigbell wow tada infinite" data-wow-duration="30s" src="img/olafhappy.png" alt="">
 
                     </div>
@@ -107,7 +107,9 @@
 
         <div class="row">
             <div class="col-md-4 col-lg-4">
-                <img src="img/padlock-pink.png" alt="">
+                <a data-toggle="modal" data-target="#hint-pink">
+                  <img src="img/padlock-pink.png" alt="">
+                </a>
                 <h4>Lucchetto rosa</h4>
                 <h1><span id="secret-pink" class="label label-success"></span></h1>
                 <div class="clock" id="clock-pink"></div>
@@ -116,7 +118,9 @@
             </div><!--ITEM END-->
 
             <div class="col-md-4 col-lg-4">
-                <img src="img/padlock-blue.png" alt="">
+                <a data-toggle="modal" data-target="#hint-blue">
+                  <img src="img/padlock-blue.png" alt="">
+                </a>
                 <h4>Lucchetto azzurro</h4>
                 <h1><span id="secret-blue" class="label label-success"></span></h1>
                 <div class="clock" id="clock-blue"></div>
@@ -139,7 +143,7 @@
     CALL-TO-ACTION SECTION
     =========================== -->
     <div class="calltoaction">
-    <div class="lightoverlay">
+      <div class="lightoverlay">
         <div class="container">
             <div class="col-md-4">
                 <img src="img/tree.gif" alt="">
@@ -147,12 +151,62 @@
 
             <div class="sectionhead content col-md-8">
                 <h2>Ancora <span class="highlight">Buon Natale</span>, piccola mia</h2>
-                <p>Questa è la conclusione del tuo regalo... spero che ti sia piaciuto 😊</p>
+                <!-- <p>Questa è la conclusione del tuo regalo... spero che ti sia piaciuto 😊</p> -->
             </div><!--CALL-TO-ACTION CONTENT END-->
         </div><!--CALL-TO-ACTION CONTAINER END-->
-    </div><!--CALL-TO-ACTION OVERLAY END-->
-</div><!--CALL-TO-ACTION END-->
+      </div><!--CALL-TO-ACTION OVERLAY END-->
+    </div><!--CALL-TO-ACTION END-->
+
+    <!-- ===========================
+    Hint-on-click modals
+    =========================== -->
     
+    <!-- Modal -->
+    <div class="modal fade" id="hint-pink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Lucchetto rosa</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Hey, ma sei proprio impaziente! Non riesci neppure ad aspettare 5 minuti? 😛
+            </p>
+            <p>
+              Comunque, aprire questo lucchetto è molto semplice... guardiamo
+              se ti ricordi la data del <span class="highlight">mio compleanno</span> 😉.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="hint-blue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Lucchetto azzurro</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Dai, anche questo è facile: la combinazione corrisponde ad <span class="highlight">una
+                delle date più importanti del 2015</span>. Devi solo scoprire quale!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
     <!-- ===========================
     NECESSARY SCRIPTS
     =========================== --> 
