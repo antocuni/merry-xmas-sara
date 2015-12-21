@@ -129,7 +129,9 @@
             </div><!--ITEM END-->
 
             <div class="col-md-4 col-lg-4">
-                <img src="img/padlock-magenta.png" alt="">
+                <a data-toggle="modal" data-target="#hint-magenta">
+                  <img src="img/padlock-magenta.png" alt="">
+                </a>
                 <h4>Lucchetto fucsia</h4>
                 <h1><span id="secret-magenta" class="label label-success"></span></h1>
                 <div class="clock" id="clock-magenta"></div>
@@ -206,6 +208,31 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="hint-magenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Lucchetto fucsia</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Ti piacciono i puzzle? Beh, meglio così perché per aprire questo
+              lucchetto dovrai risolverne uno.
+            </p>
+            <p>
+              La foto non l'ho scelta a caso: quando ti ho chiesto di farla,
+              avevo già in mente di usarla per questo giochino 😊.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="puzzle/puzzle.html" class="btn btn-primary">Gioca</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <!-- ===========================
     NECESSARY SCRIPTS
