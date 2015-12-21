@@ -273,7 +273,7 @@ Puzzle.prototype.move = function(k) {
     this.pos[this.missing] = this.pos[k];
     this.pos[k] = tmp;
     this.place_tile(k, tmp, true);
-    if (true || is_identity(this.pos)) {
+    if (is_identity(this.pos)) {
         this.disarm();
     } else {
         this.arm();
@@ -340,7 +340,7 @@ Puzzle.prototype.disarm = function() {
 Puzzle.prototype.set_alpha = function(a) {
     this.fade_count = a;
     if (a > 0) {
-        this.canvas.style.background = 'rgba(96,0,0,' + a * 0.05 + ')';
+        this.canvas.style.background = 'rgba(1,1,1,' + a * 0.05 + ')';
         this.canvas.style.display = 'block';
     } else {
         this.canvas.style.display = 'none';
