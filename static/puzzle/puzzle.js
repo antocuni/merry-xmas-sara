@@ -204,6 +204,7 @@ function Puzzle(puzzle, mn, callback) {
     var ybase = puzzle.offsetTop + measure(puzzle, 'btw', 'pt');
 
     this.src = puzzle.src;
+    puzzle.style.display = "none";
 
     this.canvas = document.createElement('div');
     this.canvas.className = 'canvas';
@@ -371,6 +372,7 @@ Puzzle.prototype.do_fade = function() {
  * Start the fade-in animation at the end of a level.
  */
 Puzzle.prototype.fade = function() {
+    document.getElementById('puzzle').style.display = "block";
     this.set_alpha(20);
     var obj = this;
     this.fade_id = setTimeout(function() { obj.do_fade(); }, 50);
