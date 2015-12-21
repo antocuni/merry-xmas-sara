@@ -159,26 +159,30 @@
     <script>new WOW().init();</script>
 
     <script>
+        function update_status() {
+            function do_clock(id, data) {
+                var status = data[0];
+                var delay = data[1];
+                var clock = $(id).FlipClock(delay, {
+                    clockFace: 'HourlyCounter',
+                    countdown: true,
+                    language: 'it',
+                    autoStart: false
+                });
+                if (status == "started") {
+                    clock.start();
+                }
+            }
+
+            $.getJSON("/status", function(data) {
+                do_clock('#clock-pink', data.pink);
+                do_clock('#clock-blue', data.blue);
+                do_clock('#clock-magenta', data.magenta);
+            });
+        }
+
         $(document).ready(function() {
-
-          var clock_pink = $('#clock-pink').FlipClock(20, {
-            clockFace: 'HourlyCounter',
-            countdown: true,
-            language: 'it'
-          });
-
-          var clock_blue = $('#clock-blue').FlipClock(20, {
-            clockFace: 'HourlyCounter',
-            countdown: true,
-            language: 'it'
-          });
-
-          var clock_magenta = $('#clock-magenta').FlipClock(20, {
-            clockFace: 'HourlyCounter',
-            countdown: true,
-            language: 'it'
-          });
-
+            update_status();
         });
     </script>
 
