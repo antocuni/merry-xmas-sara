@@ -156,7 +156,7 @@ HERO SECTION
 
 .bigbell {
     margin-top: -65px;
-    height: 320px;
+    height: 240px;
 }
 
 .santa {
@@ -365,6 +365,7 @@ SOCIAL ICONS
 
 .clock {
     zoom: 0.44;
+    -moz-transform: scale(0.44);
     width: auto !important;
     display: inline-block;
     margin-left: auto;
