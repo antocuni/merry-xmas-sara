@@ -41,9 +41,9 @@ def padlock(start_time, delay, secret):
 @app.route('/status')
 def status():
     start_time = load()['start']
-    pink = padlock(start_time, 5, 135)    # 13/05/1982 :)
-    blue = padlock(start_time, 15, 117) # 11/07/2015 :)
-    magenta = padlock(start_time, 30, 143) # 143 days since we have met
+    pink = padlock(start_time, 5*60, 135)       # 13/05/1982 :)
+    blue = padlock(start_time, 60*60, 117)      # 11/07/2015 :)
+    magenta = padlock(start_time, 2*60*60, 143) # 143 days since we have met
     return jsonify(pink=pink, blue=blue, magenta=magenta)
 
 if __name__ == '__main__':
