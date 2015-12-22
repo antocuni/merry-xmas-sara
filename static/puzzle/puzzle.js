@@ -189,7 +189,8 @@ function Puzzle(puzzle, mn, callback) {
     while (true) {
         pos = random_permutation(N);
         if (is_identity(pos)) continue;
-        missing = Math.floor(Math.random() * N);
+        //missing = Math.floor(Math.random() * N);
+        missing = N-1;
         if (parity(pos) == parity2(missing, pos[missing])) break;
     }
     this.missing = missing;
